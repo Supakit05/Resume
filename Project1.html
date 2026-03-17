@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design MU Clean & Clear App - Supakit Pitisant</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Navigation -->
+<nav id="mainNav">
+  <div class="nav-logo"><a href="index.html" style="text-decoration: none; color: inherit;">SP.</a></div>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#Project">Projects</a>
+    <a href="index.html#contact" class="nav-cta">Contact Me</a>
+  </div>
+  <button class="nav-menu-btn" id="menuBtn" onclick="openMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PROJECT HERO -->
+<section class="hero" style="padding: 120px 20px 60px;">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  
+  <div class="hero-content" style="max-width: 650px;">
+    <div class="hero-eyebrow" style="margin-bottom: 24px;">
+      <div class="hero-eyebrow-line"></div>
+      <span>PROJECT 001</span>
+      <div class="hero-eyebrow-line"></div>
+    </div>
+    <h1 class="hero-name" style="font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 20px;">
+      Design MU Clean & Clear App
+    </h1>
+    <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap;">
+      <span class="hero-badge">App Design</span>
+      <span class="hero-badge">UI/UX</span>
+      <span class="hero-badge">Figma</span>
+    </div>
+    <p class="hero-desc">ออกแบบแอปพลิเคชันรายงานปัญหาภายในมหาวิทยาลัยมหิดล ด้วย Figma ครบถ้วนจากการวิจัยผู้ใช้ ไปจนถึง High-fidelity Design System</p>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-text">Scroll to explore</span>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section style="padding: 80px 48px; max-width: 900px; margin: 0 auto;">
+  <div style="margin-bottom: 60px;">
+    <h2 class="section-title">Overview</h2>
+    <p style="color: var(--muted); font-size: 1rem; line-height: 1.9; margin-top: 20px;">
+      โปรเจกต์นี้เป็นการออกแบบแอปพลิเคชัน MU Clean & Clear สำหรับรายงานปัญหาภายในมหาวิทยาลัยมหิดล ด้วย Figma โดยออกแบบครบตั้งแต่ Low-fidelity Wireframe ไปจนถึง High-fidelity Design System พร้อม Interactive Prototype
+    </p>
+  </div>
+
+  <div style="margin-bottom: 60px;">
+    <h2 class="section-title">Challenge</h2>
+    <ul style="color: var(--muted); font-size: 1rem; line-height: 1.9; margin-top: 20px; padding-left: 20px;">
+      <li style="margin-bottom: 12px;">ออกแบบ User Interface ที่เข้าใจง่ายสำหรับการรายงานปัญหา</li>
+      <li style="margin-bottom: 12px;">สร้าง Design System ที่สอดคล้องและสามารถนำไปใช้งานได้</li>
+      <li style="margin-bottom: 12px;">ออกแบบ Dashboard สำหรับผู้บริหารในการติดตามปัญหา</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom: 60px;">
+    <h2 class="section-title">Solution</h2>
+    <p style="color: var(--muted); font-size: 1rem; line-height: 1.9; margin-top: 20px;">
+      ออกแบบแอปพลิเคชันด้วย 3 ส่วนหลัก:
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
+      <div style="padding: 20px; border: 1px solid var(--border); border-radius: 4px;">
+        <h3 style="color: var(--accent); margin-bottom: 10px;">User Interface</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">ออกแบบ UI ที่เรียบง่าย สวยงาม และใช้งานง่ายสำหรับทุกเพศทุกวัย</p>
+      </div>
+      <div style="padding: 20px; border: 1px solid var(--border); border-radius: 4px;">
+        <h3 style="color: var(--accent); margin-bottom: 10px;">Design System</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">สร้าง Component Library และ Design Guidelines สำหรับการพัฒนา</p>
+      </div>
+      <div style="padding: 20px; border: 1px solid var(--border); border-radius: 4px;">
+        <h3 style="color: var(--accent); margin-bottom: 10px;">Admin Dashboard</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">ออกแบบ Dashboard สำหรับผู้บริหารจัดการและติดตามปัญหา</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 60px;">
+    <h2 class="section-title">Design Process</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px;">
+      <div style="padding: 20px; border-left: 3px solid var(--accent); background: rgba(200,255,0,.05);">
+        <h3 style="color: var(--text); margin-bottom: 8px;">1. User Research</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">ให้ผู้ใช้กรอกแบบสอบถาม 40 คน เพื่อเข้าใจความต้องการและปัญหาในการรายงาน</p>
+      </div>
+      <div style="padding: 20px; border-left: 3px solid var(--accent); background: rgba(200,255,0,.05);">
+        <h3 style="color: var(--text); margin-bottom: 8px;">2. Wireframing</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">สร้าง High-fidelity Wireframe และ User Flow แผนผังด้วย Figma</p>
+      </div>
+      <div style="padding: 20px; border-left: 3px solid var(--accent); background: rgba(200,255,0,.05);">
+        <h3 style="color: var(--text); margin-bottom: 8px;">3. Visual Design</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">ออกแบบ Color Palette, Typography และ Component Library ด้วย Figma</p>
+      </div>
+      <div style="padding: 20px; border-left: 3px solid var(--accent); background: rgba(200,255,0,.05);">
+        <h3 style="color: var(--text); margin-bottom: 8px;">4. Interactive Prototype</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">สร้าง High-fidelity Prototype และ User Testing เพื่อการปรับปรุง</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="section-title">Tools Used</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; justify-content: center;">
+      <span class="tool-tag">Figma</span>
+      <span class="tool-tag">User Research</span>
+      <span class="tool-tag">Wireframe</span>
+      <span class="tool-tag">Prototype</span>
+      <span class="tool-tag">Design System</span>
+      <span class="tool-tag">UI/UX Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- BACK LINK -->
+<section style="padding: 60px 48px; text-align: center;">
+  <a href="index.html#Project" class="btn-primary" style="display: inline-block;">← Back to Projects</a>
+</section>
+
+<footer>
+  <span class="footer-copy">&copy; 2025 Supakit Pitisant. All rights reserved.</span>
+  <span class="footer-made">ICT &middot; Mahidol University</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
