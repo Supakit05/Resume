@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Project- Supakit Pitisant</title>
+<title>E-Commerce Website - Supakit Pitisant</title>
+<meta name="description" content="Website Project - ออกแบบและพัฒนาเว็บไซต์ E-commerce ด้วย Figma, HTML, CSS, JavaScript และ MySQL โดย ศุภกิตติ์ ปิติสานต์">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
@@ -12,6 +13,16 @@
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="navClose">&#x2715;</button>
+  <a href="index.html#about" onclick="closeMobileNav()">About</a>
+  <a href="index.html#skills" onclick="closeMobileNav()">Skills</a>
+  <a href="index.html#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="index.html#Project" onclick="closeMobileNav()">Projects</a>
+  <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+</div>
 
 <!-- Navigation -->
 <nav id="mainNav">
@@ -40,7 +51,7 @@
       <div class="hero-eyebrow-line"></div>
     </div>
     <h1 class="hero-name" style="font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 20px;">
-      Website Project
+      E-Commerce Website
     </h1>
     <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap;">
       <span class="hero-badge">Figma</span>
