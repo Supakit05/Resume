@@ -1,88 +1,12 @@
-// ===== CUSTOM CURSOR =====
-const cursor = document.getElementById("cursor");
-const ring = document.getElementById("cursorRing");
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener("mousemove", e => {
-  mx = e.clientX;
-  my = e.clientY;
-  cursor.style.left = mx + "px";
-  cursor.style.top = my + "px";
-});
-
-(function animateRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
-  requestAnimationFrame(animateRing);
-})();
-
-document.querySelectorAll("a, button, .stat-item, .work-item, .tool-tag, .edu-item").forEach(el => {
-  el.addEventListener("mouseenter", () => {
-    cursor.classList.add("hover");
-    ring.classList.add("hover");
-  });
-  el.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-    ring.classList.remove("hover");
-  });
-});
-
-// ===== SCROLL REVEAL =====
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-
-      // Animate skill bars
-      entry.target.querySelectorAll(".skill-fill").forEach(bar => {
-        bar.classList.add("animate");
-      });
-
-      // Animate counters
-      entry.target.querySelectorAll("[data-count]").forEach(el => {
-        const target = +el.getAttribute("data-count");
-        const start = performance.now();
-        const duration = 1400;
-
-        function update(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target);
-          if (progress < 1) requestAnimationFrame(update);
-          else el.textContent = target;
-        }
-        requestAnimationFrame(update);
-      });
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll(".reveal, .stat-item").forEach(el => observer.observe(el));
-
-// ===== MOBILE NAV =====
-function openMobileNav() {
-  document.getElementById("mobileNav").classList.add("open");
-}
-
-function closeMobileNav() {
-  document.getElementById("mobileNav").classList.remove("open");
-}
-
-document.getElementById("navClose").addEventListener("click", closeMobileNav);
-
-// ===== NAV SCROLL EFFECT =====
-window.addEventListener("scroll", () => {
-  const nav = document.getElementById("mainNav");
-  nav.style.background = window.scrollY > 50
-    ? "rgba(8,8,8,.97)"
-    : "";
-});
-
-// ===== DISABLE CURSOR ON TOUCH DEVICES =====
-if ("ontouchstart" in window) {
-  cursor.style.display = "none";
-  ring.style.display = "none";
-  document.body.style.cursor = "auto";
-}
+const projects={
+  'clean-app':{type:'01 / UI/UX DESIGN & MOBILE DEVELOPMENT',title:'MU Clean & Clear App',image:'assets/project1/ChatGPT Image 7 ก.ย. 2569 15_03_21.png',imageLabel:'MU Green & Clean',summary:'A campus reporting app taken from UI/UX concept through to a functional mobile product experience.',tools:['Figma','Wireframing','Prototyping','Dart','Java','MySQL','Mobile Development']},
+  commerce:{type:'03 / WEB DEVELOPMENT',title:'E-Commerce Website',image:'assets/project3/image (4).png',images:['assets/project3/image (4).png','assets/project3/image.png','assets/project3/image (1).png','assets/project3/image (2).png','assets/project3/image (3).png'],imageLabel:'Ophtus E-Commerce',summary:'A responsive e-commerce website created for a Web Technologies & Application project.',tools:['Figma','HTML','CSS','JavaScript','MySQL']},
+  apartment:{type:'04 / FULL-STACK DEVELOPMENT',title:'Apartment Management System',image:'assets/projects/project-04.jpg',imageLabel:'Add image: project-04.jpg',summary:'A practical management system for rooms, tenants, payments, and maintenance requests.',tools:['TypeScript','Java','Docker','REST API']},
+  arex:{type:'05 / INTERNSHIP',title:'AREX Platform',image:'assets/projects/project-05.jpg',imageLabel:'Add image: project-05.jpg',summary:'Frontend and UI/UX contribution to a web platform during an internship at Botnoi Academy.',tools:['Frontend','JavaScript','Postman','GitHub','UI/UX']}
+};
+const dialog=document.querySelector('#project-dialog');
+const certificateDescription=document.querySelector('.certificate-info>p:not(.project-type)');
+if(certificateDescription) certificateDescription.textContent='Certificate of participation in the U2T Hackathon 2021 competition, Central Region, held at Thammasat University.';
+document.querySelectorAll('.project-info button').forEach(button=>{button.textContent=button.textContent.replace(/[↗⟶→]/g,'').trim()});
+document.querySelectorAll('.project-card').forEach(card=>card.querySelector('button').addEventListener('click',()=>{const p=projects[card.dataset.project];document.querySelector('#modal-type').textContent=p.type;document.querySelector('#modal-title').textContent=p.title;document.querySelector('#modal-summary').textContent=p.summary;const images=p.images||[p.image];let media=document.querySelector('#modal-media');if(!media){media=document.createElement('div');media.id='modal-media';media.className='modal-media';document.querySelector('#modal-summary').after(media)}media.classList.toggle('single-image',images.length===1);media.innerHTML=images.map((image,index)=>`<a class="modal-image-link" href="${image}" target="_blank" rel="noreferrer"><img src="${image}" alt="${p.title} screenshot ${index+1}" onerror="this.parentElement.remove()"></a>`).join('')+`<span>${p.imageLabel}</span>`;document.querySelector('#modal-details').innerHTML='<section><h3>Role & contribution</h3><p>Designed and developed key parts of this project, from idea through implementation.</p></section><section><h3>Project focus</h3><p>Creating a clear, practical experience around real user needs.</p></section>';document.querySelector('#modal-tools').innerHTML=p.tools.map(x=>`<span>${x}</span>`).join('');dialog.showModal()}));
+document.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
